@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Fake News Prediction</title>
+		
+		<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> 
+		
+	</head>
+	
+    <body background="{{ url_for('static', filename='background.png') }}">
+        <center >
+            
+            <h1> Fake News Predictor </h1>
+            <br />
+            <form action="{{ url_for('predict')}}" method="POST">
+                <textarea name="MyText" cols="100" rows="10" placeholder="Enter Text.." required="required" ></textarea>
+                <br />
+				
+				<div class='wrapper'>
+                <button type="submit"  class="block">Predict</button>  <!btn btn-primary btn-block btn-large>
+				</div>
+            </form>
+			<br>
+			<br>
+			<br>
+            <h3>{{ prediction_text }}</h3>
+			<br>
+			<br>
+			<h3> {{ probability }} </h3>
+            
+            
+          </center>
+    </body>
+</html>
